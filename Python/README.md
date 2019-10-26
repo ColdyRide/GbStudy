@@ -1,1 +1,1 @@
-# # Completed lessons for GB's Python base course
+# Completed lessons for GB's Python base course
