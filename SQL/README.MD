@@ -1,1 +1,1 @@
-# Branch for GB's Databases course
+# Branch for GB's Databases course.
