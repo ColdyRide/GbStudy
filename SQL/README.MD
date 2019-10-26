@@ -1,1 +1,1 @@
-Repo for GB's Databases course
+Completed lessons for GB's Databases course
