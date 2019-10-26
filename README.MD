@@ -1,1 +1,1 @@
-This repo for my studying of SQL in GB
+This repo for my studying in GB
