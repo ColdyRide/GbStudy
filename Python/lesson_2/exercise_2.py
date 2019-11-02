@@ -5,6 +5,6 @@
 # Для заполнения списка элементов необходимо использовать функцию input().
 init_list = input('Please, insert our list, each element separate by space - ')
 init_list = init_list.split(' ')
-for i in range(0,len(init_list)-len(init_list)%2,2):
-    init_list[i], init_list[i+1] = init_list[i+1], init_list[i]
+for i in range(0, len(init_list) - len(init_list) % 2, 2):
+    init_list[i], init_list[i + 1] = init_list[i + 1], init_list[i]
 print(f'Our result list is - {init_list}')
