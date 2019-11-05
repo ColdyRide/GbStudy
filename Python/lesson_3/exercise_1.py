@@ -4,6 +4,12 @@
 
 
 def div_func(number_1, number_2):
+    """
+    Функция деления одного числа на другое, реализована проверка числового ввода и деления на ноль
+    :param number_1: str, позиционный
+    :param number_2: str, позиционный
+    :return: float результат в описательной строке
+    """
     try:
         return print(f'{number_1}:{number_2} = {float(number_1)/float(number_2)}')
     except ZeroDivisionError:

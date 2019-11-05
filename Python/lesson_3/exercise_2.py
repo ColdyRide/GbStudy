@@ -5,6 +5,11 @@
 
 
 def user_data(**kwargs):
+    """
+    Принимает на вход инфо пользователя в виде именнованных аргументов, выводит в строку информацию о пользователе
+    :param kwargs: str, именованные аргументы
+    :return: str, описательная строка о пользователе
+    """
     return print(f"User {kwargs['name']} {kwargs['lastname']} is {kwargs['year']} year of birth live in "
                  f"{kwargs['town']} have follow personal data: email - {kwargs['mail']}, tel. - {kwargs['tel']}")
 
