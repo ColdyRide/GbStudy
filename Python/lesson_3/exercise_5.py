@@ -16,16 +16,13 @@ def cont_sum(prev_sum=0, user_data=[]):
     :return: float
     """
     try:
+        user_data = input('Please insert numbers for summarize, it\'s must be separated by space - ').split()
         if 'Q' in user_data:
             user_data.remove('Q')
             return print(f"Current sum = {sum([float(i) for i in user_data], prev_sum)}")
         else:
-            user_data = input('Please insert numbers for summarize, it\'s must be separated by space - ').split()
-            if 'Q' in user_data:
-                user_data.remove('Q')
-                return print(f"Current sum = {sum([float(i) for i in user_data], prev_sum)}")
             print(f"Current sum = {sum([float(i) for i in user_data], prev_sum)}")
-        return cont_sum(sum([float(i) for i in user_data], prev_sum))
+            return cont_sum(sum([float(i) for i in user_data], prev_sum))
     except ValueError:
         print('Looks like you are not insert correct values, so I can\'t sum it')
 
