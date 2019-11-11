@@ -24,8 +24,8 @@ def file_writing(file_name='text_1.txt'):
     :return: file в рабочей дирректории
     """
     while path.exists(file_name):
-        _ = input('Looks like file text_1.txt all-ready exists, '
-                  'please insert new name, or just press Enter for rewriting:\n')
+        _ = input(f'Looks like file {file_name} all-ready exists, '
+                  f'please insert new name, or just press Enter for rewriting:\n')
         if not _:
             break
         else:
