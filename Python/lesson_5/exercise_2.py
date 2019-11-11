@@ -4,7 +4,7 @@
 from os import path
 
 
-def file_opening(file_name='text_2.txt'):
+def text_analyzer(file_name='text_2.txt'):
     """
     Функция открывает файл, только если он существует после чистит строки от \n и считает строки со словами строках.
     Если файл пуст выводит сообщение об этом
@@ -23,4 +23,4 @@ def file_opening(file_name='text_2.txt'):
            [print(f'In row {i} are {j} words') for i, j in word_number.items()]
 
 
-file_opening()
+text_analyzer()

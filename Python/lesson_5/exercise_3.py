@@ -5,7 +5,7 @@
 from os import path
 
 
-def file_opening(file_name='text_3.txt'):
+def salary_analyzer(file_name='text_3.txt'):
     """
     Функция принимает в обработку файл содержащий данные о сотрудника, определяет сотрудников с откладом ниже порога.
     Подсчитывает средний доход
@@ -27,4 +27,4 @@ def file_opening(file_name='text_3.txt'):
             print(f'Please check {file_name} content, looks like not all data was filled in!')
 
 
-file_opening()
+salary_analyzer()
