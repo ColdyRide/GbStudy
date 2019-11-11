@@ -25,12 +25,12 @@ def file_writing(file_name='text_1.txt'):
     """
     while path.exists(file_name):
         _ = input('Looks like file text_1.txt all-ready exists, '
-                  'please insert new name, or just press Enter for rewriting:\n ')
+                  'please insert new name, or just press Enter for rewriting:\n')
         if not _:
             break
         else:
             file_name = _
-    with open(file_name, 'w', encoding='UTF-8') as f:
+    with open(r'' + file_name, 'w', encoding='UTF-8') as f:
         f.writelines([i + '\n' for i in user_input() if i])
 
 
