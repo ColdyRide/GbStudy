@@ -41,6 +41,7 @@ def file_reading(file_name='text_7.txt'):
 def file_writing(user_data, file_name='text_7.json'):
     """
     Функция записывает файл text_7.json с проверкой на наличие файла
+    :param user_data: list of dicts
     :param file_name: str path to file, by default text_7.json
     :return: file in cwd
     """
@@ -52,7 +53,7 @@ def file_writing(user_data, file_name='text_7.json'):
         else:
             file_name = _
     with open(r'' + file_name, 'w', encoding='UTF-8') as f:
-        f.write(json.dumps(user_data))
+        f.write(json.dumps(user_data, ensure_ascii=False))
         return print(f'Result was writen to {file_name}')
 
 
