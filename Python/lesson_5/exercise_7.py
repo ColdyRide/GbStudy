@@ -53,7 +53,7 @@ def file_writing(user_data, file_name='text_7.json'):
         else:
             file_name = _
     with open(r'' + file_name, 'w', encoding='UTF-8') as f:
-        f.write(json.dumps(user_data, ensure_ascii=False))
+        f.write(json.dumps(user_data, ensure_ascii=False, indent=4))
         return print(f'Result was writen to {file_name}')
 
 
