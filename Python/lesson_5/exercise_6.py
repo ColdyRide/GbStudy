@@ -42,7 +42,11 @@ def sum_elements(user_list, result=0):
     :return: float
     """
     for i in user_list:
-        result += float(i)
+        try:
+            result += float(i)
+        except TypeError:
+            print(f'{i} is part of source file and it\'s not a number, please check file')
+            continue
     return result
 
 
