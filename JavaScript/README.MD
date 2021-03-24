@@ -1,0 +1,1 @@
+# Branch for GB's JavaScript base course
