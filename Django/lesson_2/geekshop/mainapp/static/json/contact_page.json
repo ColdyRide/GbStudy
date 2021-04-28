@@ -1,0 +1,5 @@
+{
+    'main_links': MAIN_LINKS,
+    'contact_number': range(3),
+    'title': 'контакты'
+}
