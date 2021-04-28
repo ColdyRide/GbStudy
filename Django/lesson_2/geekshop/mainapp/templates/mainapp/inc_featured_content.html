@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{%  load static %}
+ <div class="featured">
+     <div class="featured-menu">
+         <a class="active" href="#">Популярные</a><a href="#">Новинки</a>
+     </div>
+     <a class="explore" href="#">показать все <img src="{% static 'img/arrow.png'%}" alt=""></a>
+     <div class="clearfix">
+     </div>
+     <div class="tab-content">
+         {% for block in content_desc %}
+            <div class="block">
+                <a href="#"><img src="{% static block.img %}" alt="img">
+                    <div class="text">
+                        <img src="{% static 'img/icon-hover.png'%}" alt="img">
+                        <h4>{{ block.h4 }}</h4>
+                        <p>{{ block.p }}</p>
+                    </div>
+                </a>
+            </div>
+         {% endfor %}
+     </div>
+ </div>

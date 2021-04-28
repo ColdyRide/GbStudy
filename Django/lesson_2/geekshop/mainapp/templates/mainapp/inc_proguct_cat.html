@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<ul class="links-menu">
+    {% for category in categories_links %}
+        {% if category.name == 'все' %}
+        <li><a href={{ category.href }} class="active">{{ category.name }}</a></li>
+        {% else %}
+            <li><a href={{ category.href }}>{{ category.name }}</a></li>
+        {% endif %}
+    {% endfor %}
+</ul>

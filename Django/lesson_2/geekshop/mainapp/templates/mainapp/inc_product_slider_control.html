@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% load static %}
+<div class="slider-control">
+    {% for block in slider_control_imgs %}
+        <div class="block">
+            <a href="#"><img src="{% static block%}" alt="block_img">
+                <div class="text"></div>
+            </a>
+        </div>
+    {% endfor %}
+</div>
