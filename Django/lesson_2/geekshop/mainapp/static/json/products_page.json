@@ -1,0 +1,25 @@
+{
+    "main_links": [
+        {"href": "main", "name": "домой"},
+        {"href": "products", "name": "продукты"},
+        {"href": "contact", "name": "контакты"}
+    ],
+    "categories_links": [
+        {"href": "#", "name": "все"},
+        {"href": "#", "name": "дом"},
+        {"href": "#", "name": "офис"},
+        {"href": "#", "name": "модерн"},
+        {"href": "#", "name": "классика"}
+    ],
+    "slider_control_imgs": [
+        "img/controll.jpg",
+        "img/controll1.jpg",
+        "img/controll2.jpg"
+    ],
+    "related_products": [
+        "img/product-11.jpg",
+        "img/product-21.jpg",
+        "img/product-31.jpg"
+    ],
+    "title": "каталог"
+}
