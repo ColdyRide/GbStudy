@@ -1,0 +1,10 @@
+{% load static %}
+<div class="slider-control">
+    {% for block in slider_control_imgs %}
+        <div class="block">
+            <a href="#"><img src="{% static block%}" alt="block_img">
+                <div class="text"></div>
+            </a>
+        </div>
+    {% endfor %}
+</div>
