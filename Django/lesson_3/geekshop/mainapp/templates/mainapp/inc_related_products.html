@@ -7,7 +7,7 @@
     <div class="related-products clearfix">
         {% for block in related_products %}
         <div class="block">
-            <a href="#"><img src="{% static block %}" alt="block_img">
+            <a href="#"><img src="/media/{{ block.image }}" alt="{{ block.name }}">
                 <div class="text">
                     <img src="{% static 'img/icon-hover.png'%}" alt="img">
                     <h4>Стул повышенного качества</h4>

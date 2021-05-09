@@ -1,7 +1,7 @@
 {
     "main_links": [
         {"href": "main", "name": "домой"},
-        {"href": "products", "name": "продукты"},
+        {"href": "products:index", "name": "продукты"},
         {"href": "contact", "name": "контакты"}
     ],
     "contact_number": "123",

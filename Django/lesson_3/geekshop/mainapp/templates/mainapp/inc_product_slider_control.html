@@ -1,8 +1,7 @@
-{% load static %}
 <div class="slider-control">
-    {% for block in slider_control_imgs %}
+    {% for block in slider_img %}
         <div class="block">
-            <a href="#"><img src="{% static block%}" alt="block_img">
+            <a href="#"><img src="/media/{{ block.image }}" alt="{{ block.name }}">
                 <div class="text"></div>
             </a>
         </div>

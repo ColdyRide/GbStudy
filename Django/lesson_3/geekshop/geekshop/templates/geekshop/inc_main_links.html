@@ -2,10 +2,10 @@
     <a href="{% url 'main' %}" class="logo"></a>
     <ul class="menu">
         {% for link in main_links %}
-            {% if link.href == request.resolver_match.url_name %}
-                <li><a href="{% url link.href %}" class="active">{{link.name}}</a></li>
+            {% if link.href == request.resolver_match.url_name or request.resolver_match.namespaces.0 in link.href %}
+                <li><a href="{% url link.href %}" class="active">{{ link.name }}</a></li>
             {% else %}
-                <li><a href="{% url link.href %}">{{link.name}}</a></li>
+                <li><a href="{% url link.href %}">{{ link.name }}</a></li>
             {% endif %}
         {% endfor %}
     </ul>
