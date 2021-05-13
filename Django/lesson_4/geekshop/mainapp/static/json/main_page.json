@@ -1,0 +1,19 @@
+{
+  "main_links": [
+        {"href": "main", "name": "домой"},
+        {"href": "products:index", "name": "продукты"},
+        {"href": "contact", "name": "контакты"}
+    ],
+
+  "content_desc": [
+        {"img": "img/product-1.jpg",
+          "h4": "Отличный стул",
+          "p": "Расположитесь комфортно."
+         },
+        {"img": "img/product-2.jpg",
+          "h4": "Стул повышенного качества",
+          "p": "Не оторваться."
+         }
+    ],
+  "title": "главная"
+}

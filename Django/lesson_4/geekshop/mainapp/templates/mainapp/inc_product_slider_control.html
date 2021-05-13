@@ -1,0 +1,9 @@
+<div class="slider-control">
+    {% for block in slider_img %}
+        <div class="block">
+            <a href="#"><img src="/media/{{ block.image }}" alt="{{ block.name }}">
+                <div class="text"></div>
+            </a>
+        </div>
+    {% endfor %}
+</div>
