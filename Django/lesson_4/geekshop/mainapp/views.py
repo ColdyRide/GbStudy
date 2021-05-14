@@ -1,10 +1,15 @@
 from django.shortcuts import render
-from .models import ProductCategories, MiniImg, ProductsImg
+from .models import ProductCategories, Product
+
 import json
+import os
+
+
+JSON_PATH = 'mainapp/json'
 
 
 def get_json(file_name):
-    with open(f'./mainapp/static/json/{file_name}.json', 'r', encoding='UTF-8') as file:
+    with open(os.path.join(JSON_PATH, f'{file_name}.json'), 'r', encoding='UTF-8') as file:
         result = json.load(file)
     return result
 
@@ -12,17 +17,36 @@ def get_json(file_name):
 
 
 def main(request):
-    return render(request, 'mainapp/index.html', context=get_json('main_page'))
+    main_links = get_json('main_links')
+    title = 'главная'
+    context = {
+        'title': title,
+        'main_links': main_links,
+        'products': Product.objects.all()[:3]
+    }
+
+    return render(request, 'mainapp/index.html', context)
 
 
 def products(request, pk=None):
-    product_context = get_json('products_page')
-    product_context['categories'] = ProductCategories.objects.all()
-    product_context['slider_img'] = MiniImg.objects.all()
-    product_context['related_products'] = ProductsImg.objects.all()
+    main_links = get_json('main_links')
+    title = 'каталог'
+    context = {
+        'title': title,
+        'main_links': main_links,
+        'categories': ProductCategories.objects.all()
+    }
 
-    return render(request, 'mainapp/products.html', context=product_context)
+    return render(request, 'mainapp/products.html', context)
 
 
 def contact(request):
-    return render(request, 'mainapp/contact.html', context=get_json('contact_page'))
+    main_links = get_json('main_links')
+    title = 'контакты'
+    context = {
+        'title': title,
+        'main_links': main_links,
+        'contact_number': range(3)
+    }
+
+    return render(request, 'mainapp/contact.html', context)

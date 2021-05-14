@@ -1,0 +1,14 @@
+[
+  {
+    "category": "дом",
+    "image": "img/product-1.jpg",
+    "name": "Отличный стул",
+    "short_desc": "Расположитесь комфортно."
+  },
+  {
+    "category": "все",
+    "image": "img/product-2.jpg",
+    "name": "Стул повышенного качества",
+    "short_desc": "Не оторваться."
+  }
+]

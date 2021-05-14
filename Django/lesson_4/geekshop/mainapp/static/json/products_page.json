@@ -1,9 +1,0 @@
-{
-    "main_links": [
-        {"href": "main", "name": "домой"},
-        {"href": "products:index", "name": "продукты"},
-        {"href": "contact", "name": "контакты"}
-    ],
-
-    "title": "каталог"
-}
