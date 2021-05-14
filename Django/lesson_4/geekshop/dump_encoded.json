@@ -1,148 +1,5 @@
 [
   {
-    "model": "admin.logentry",
-    "pk": 1,
-    "fields": {
-      "action_time": "2021-05-14T18:47:01.808Z",
-      "user": 1,
-      "content_type": 7,
-      "object_id": "2",
-      "object_repr": "Стул повышенного качества (все)",
-      "action_flag": 2,
-      "change_message": "[{\"changed\": {\"fields\": [\"\\u0426\\u0435\\u043d\\u0430 \\u043f\\u0440\\u043e\\u0434\\u0443\\u043a\\u0442\\u0430\", \"\\u041a\\u043e\\u043b\\u0438\\u0447\\u0435\\u0441\\u0442\\u0432\\u043e \\u043d\\u0430 \\u0441\\u043a\\u043b\\u0430\\u0434\\u0435\"]}}]"
-    }
-  },
-  {
-    "model": "admin.logentry",
-    "pk": 2,
-    "fields": {
-      "action_time": "2021-05-14T18:47:14.460Z",
-      "user": 1,
-      "content_type": 7,
-      "object_id": "1",
-      "object_repr": "Отличный стул (дом)",
-      "action_flag": 2,
-      "change_message": "[{\"changed\": {\"fields\": [\"\\u0426\\u0435\\u043d\\u0430 \\u043f\\u0440\\u043e\\u0434\\u0443\\u043a\\u0442\\u0430\", \"\\u041a\\u043e\\u043b\\u0438\\u0447\\u0435\\u0441\\u0442\\u0432\\u043e \\u043d\\u0430 \\u0441\\u043a\\u043b\\u0430\\u0434\\u0435\"]}}]"
-    }
-  },
-  {
-    "model": "admin.logentry",
-    "pk": 3,
-    "fields": {
-      "action_time": "2021-05-14T19:00:00.951Z",
-      "user": 1,
-      "content_type": 7,
-      "object_id": "2",
-      "object_repr": "Стул повышенного качества (все)",
-      "action_flag": 2,
-      "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u0430\\u0440\\u0442\\u0438\\u043d\\u043a\\u0430\"]}}]"
-    }
-  },
-  {
-    "model": "admin.logentry",
-    "pk": 4,
-    "fields": {
-      "action_time": "2021-05-14T19:00:30.247Z",
-      "user": 1,
-      "content_type": 7,
-      "object_id": "1",
-      "object_repr": "Отличная лампа (дом)",
-      "action_flag": 2,
-      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u043c\\u044f\", \"\\u041a\\u0440\\u0430\\u0442\\u043a\\u043e\\u0435 \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\"]}}]"
-    }
-  },
-  {
-    "model": "admin.logentry",
-    "pk": 5,
-    "fields": {
-      "action_time": "2021-05-14T19:00:53.525Z",
-      "user": 1,
-      "content_type": 7,
-      "object_id": "1",
-      "object_repr": "Отличная лампа (дом)",
-      "action_flag": 2,
-      "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u0430\\u0440\\u0442\\u0438\\u043d\\u043a\\u0430\"]}}]"
-    }
-  },
-  {
-    "model": "admin.logentry",
-    "pk": 6,
-    "fields": {
-      "action_time": "2021-05-14T19:01:37.911Z",
-      "user": 1,
-      "content_type": 7,
-      "object_id": "1",
-      "object_repr": "Отличная лампа (дом)",
-      "action_flag": 2,
-      "change_message": "[]"
-    }
-  },
-  {
-    "model": "admin.logentry",
-    "pk": 7,
-    "fields": {
-      "action_time": "2021-05-14T19:02:32.849Z",
-      "user": 1,
-      "content_type": 7,
-      "object_id": "1",
-      "object_repr": "Отличная лампа (дом)",
-      "action_flag": 2,
-      "change_message": "[]"
-    }
-  },
-  {
-    "model": "admin.logentry",
-    "pk": 8,
-    "fields": {
-      "action_time": "2021-05-14T19:02:36.758Z",
-      "user": 1,
-      "content_type": 7,
-      "object_id": "2",
-      "object_repr": "Стул повышенного качества (все)",
-      "action_flag": 2,
-      "change_message": "[]"
-    }
-  },
-  {
-    "model": "admin.logentry",
-    "pk": 9,
-    "fields": {
-      "action_time": "2021-05-14T19:05:59.897Z",
-      "user": 1,
-      "content_type": 7,
-      "object_id": "3",
-      "object_repr": "Стул офисный (офис)",
-      "action_flag": 1,
-      "change_message": "[{\"added\": {}}]"
-    }
-  },
-  {
-    "model": "admin.logentry",
-    "pk": 10,
-    "fields": {
-      "action_time": "2021-05-14T19:08:42.263Z",
-      "user": 1,
-      "content_type": 7,
-      "object_id": "3",
-      "object_repr": "Стул офисный (офис)",
-      "action_flag": 2,
-      "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u0430\\u0440\\u0442\\u0438\\u043d\\u043a\\u0430\"]}}]"
-    }
-  },
-  {
-    "model": "admin.logentry",
-    "pk": 11,
-    "fields": {
-      "action_time": "2021-05-14T19:09:32.858Z",
-      "user": 1,
-      "content_type": 7,
-      "object_id": "3",
-      "object_repr": "Диван (офис)",
-      "action_flag": 2,
-      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u043c\\u044f\", \"\\u041a\\u0440\\u0430\\u0442\\u043a\\u043e\\u0435 \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\", \"\\u041a\\u0430\\u0440\\u0442\\u0438\\u043d\\u043a\\u0430\"]}}]"
-    }
-  },
-  {
     "model": "auth.permission",
     "pk": 1,
     "fields": {
@@ -431,14 +288,6 @@
     }
   },
   {
-    "model": "sessions.session",
-    "pk": "has2sbnt5l2a7r9k5uxl3570b5pu296u",
-    "fields": {
-      "session_data": ".eJxVjEsOAiEQBe_C2pDma3Dp3jOQ7gZk1EAyn9XEuyvJLPQtX1VqFxG3tcZtyXOckrgIJU6_HyE_cxsgPbDdu-Te1nkiORR50EXeesqv6-H-BSoudWStB-05AZ0V6ICOFDhLqAGTA4NUPBuLprgQLLvMDjWjUVC-I5_F-wPNdjgz:1lhcic:FtY6MXbl72VUDF4s5kmTVH4WOgmSfpRLNZHen-VKXH8",
-      "expire_date": "2021-05-28T18:39:26.446Z"
-    }
-  },
-  {
     "model": "mainapp.productcategories",
     "pk": 1,
     "fields": {
@@ -516,8 +365,8 @@
     "model": "authapp.shopuser",
     "pk": 1,
     "fields": {
-      "password": "pbkdf2_sha256$260000$gocbbfMjmqNz6LTGiQeyP4$YIA8oCYKBil5gR4xqS5Wz1ENRFfLhLXm4Wy9fkgjOv4=",
-      "last_login": "2021-05-14T18:39:26.317Z",
+      "password": "pbkdf2_sha256$260000$4pgaz8wwsH8hTGjAM33r1W$wxfXuFd4iFb6MYf/b1uFEZFqeSdVQOA5fKIdbVbgoaA=",
+      "last_login": null,
       "is_superuser": true,
       "username": "admin",
       "first_name": "",
@@ -525,7 +374,7 @@
       "email": "",
       "is_staff": true,
       "is_active": true,
-      "date_joined": "2021-05-14T18:37:14.316Z",
+      "date_joined": "2021-05-14T22:06:27.480Z",
       "avatar": "",
       "age": 30,
       "groups": [],

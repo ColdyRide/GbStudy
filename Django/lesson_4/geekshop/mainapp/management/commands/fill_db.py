@@ -26,9 +26,12 @@ class Command(BaseCommand):
 
         Product.objects.all().delete()
         for product in products:
-            category_name = product["category"]
+            category_get_param = product["category"]
 
-            _category = ProductCategories.objects.get(name=category_name)
+            if isinstance(category_get_param, int):
+                _category = ProductCategories.objects.get(id=category_get_param)
+            else:
+                _category = ProductCategories.objects.get(name=category_get_param)
 
             product['category'] = _category
             new_product = Product(**product)
