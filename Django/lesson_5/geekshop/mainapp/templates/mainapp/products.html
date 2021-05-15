@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block menu %}
+    <div class="hero-white">
+        {% include 'includes/inc_main_links.html' %}
+    </div>
+{% endblock %}
+{% block content %}
+    <div class="details">
+        <div class="links clearfix">
+            {% include 'mainapp/includes/inc_proguct_cat.html' %}
+        </div>
+        {% include 'mainapp/includes/inc_hot_product.html' %}
+        {% include 'mainapp/includes/inc_related_products.html' %}
+    </div>
+{% endblock %}
