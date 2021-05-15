@@ -8,12 +8,11 @@
             {{ title|title }}
         {% endblock %}
     </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'fonts/font-awesome/css/font-awesome.css' %}">
     {% block css %}
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-              integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
-              crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-        <link rel="stylesheet" href="{% static 'fonts/font-awesome/css/font-awesome.css' %}">
     {% endblock %}
     {% block js %}
 
@@ -22,7 +21,7 @@
 <body>
 <div class="container">
     <div class="login">
-    <a href="{% url 'index' %}"> На главную</a>
+        <a href="{% url 'index' %}"> На главную</a>
         <div class="h2 text-center head">
             Вход в систему
         </div>

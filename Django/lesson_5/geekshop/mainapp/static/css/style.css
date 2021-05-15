@@ -80,14 +80,29 @@ html, body {
 	top: 63px;
 	left: 1176px;
 }
+
 .basket {
-	display: block;
-	width: 23px;
-	height: 23px;	
-	background-image: url(../img/basket.png);
+	display: flex;
+	flex-flow: row;
+	height: 23px;
+	width: 200px;
 	position: absolute;
 	top: 63px;
 	left: 1210px;
+	color: #212121;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: left;
+    text-transform: uppercase;
+    text-decoration: none;
+	align-content: center;
+}
+.basket span{
+	padding: 3px;
+}
+.basket::before{
+	margin-right: 10px;
+	content: url(../img/shopping-basket.png);
 }
 
 .clearfix:after {
@@ -292,6 +307,7 @@ html, body {
 	margin: 15px 15px;
 }
 .tab-content a .text img {
+	width: fit-content;
 	margin: 70px auto 0;
 }
 .tab-content a:hover .text {
@@ -1025,6 +1041,7 @@ td:first-child {
 	margin-bottom: 120px;
 }
 .related-products .block a img {
+	width: 100%;
 	float: left;
 }
 .related-products .block {
@@ -1064,9 +1081,72 @@ td:first-child {
 	margin: 15px 15px;
 }
 .related-products a .text img {
+	width: auto;
 	float: none;
 	margin-top: 80px;
 }
 .related-products a:hover .text{
+	display: block;
+}
+
+.products_list{
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.category-products {
+	margin-top: 100px;
+	display: flex;
+	flex-flow: row wrap;
+	width: 100%;
+	justify-content: center;
+}
+
+.category-products .block {
+	height: 370px;
+	width: 370px;
+	position: relative;
+	margin: 30px;
+	display: block;
+}
+
+.category-products .block img {
+	width: 100%;
+}
+
+.category-products a .text img {
+	width: auto;
+	margin-top: 80px;
+}
+
+.category-products a .text {
+	display: none;
+	height: 368px;
+	width: 368px;
+	background-color: #ffffff;
+    opacity: 0.9;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    border: 1px solid #9c9c9c;
+}
+.category-products a .text h4 {
+	color:  #212121;
+	font-size: 30px;
+	font-weight: 700;
+	line-height: 30px;
+	text-align: center;
+}
+.category-products a .text p {
+	color: #6c6c6c;
+	font-size: 20px;
+	font-weight: 300;
+	text-align: center;
+	margin: 15px 15px;
+}
+
+.category-products a:hover .text{
 	display: block;
 }
