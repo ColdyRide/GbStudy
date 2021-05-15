@@ -1,0 +1,11 @@
+<ul class="links-menu">
+    {% for category in categories %}
+        {% if category.id == request.resolver_match.kwargs.pk %}
+            <li><a href="{% url 'products:category' category.id %}" class="active">{{ category.name }}</a></li>
+        {% elif not request.resolver_match.kwargs and category.id == 1 %}
+            <li><a href="{% url 'products:category' category.id %}" class="active">{{ category.name }}</a></li>
+        {% else %}
+            <li><a href="{% url 'products:category' category.id %}">{{ category.name }}</a></li>
+        {% endif %}
+    {% endfor %}
+</ul>
