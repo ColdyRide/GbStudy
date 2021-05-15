@@ -21,9 +21,10 @@ from django.conf.urls import include
 import mainapp.views as mainapp
 
 urlpatterns = [
-    path('', mainapp.main, name='main'),
+    path('', mainapp.main, name='index'),
     path('products/', include('mainapp.urls', namespace='products')),
     path('contact/', mainapp.contact, name='contact'),
+    path('auth/', include('authapp.urls', namespace='auth')),
     path('admin/', admin.site.urls, name='admin'),
 ]
 

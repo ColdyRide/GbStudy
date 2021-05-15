@@ -24,7 +24,6 @@ def main(request):
         'main_links': main_links,
         'products': Product.objects.all()[:3]
     }
-
     return render(request, 'mainapp/index.html', context)
 
 
@@ -36,7 +35,6 @@ def products(request, pk=None):
         'main_links': main_links,
         'categories': ProductCategories.objects.all()
     }
-
     return render(request, 'mainapp/products.html', context)
 
 

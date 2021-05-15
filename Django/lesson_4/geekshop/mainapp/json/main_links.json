@@ -1,14 +1,15 @@
 [
   {
-    "href": "main",
+    "href": "index",
     "name": "домой"
   },
   {
-    "href": "products:index",
+    "href": "products:category",
     "name": "продукты"
   },
   {
     "href": "contact",
     "name": "контакты"
   }
+
 ]
