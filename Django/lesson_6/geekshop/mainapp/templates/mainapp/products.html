@@ -10,7 +10,9 @@
         <div class="links clearfix">
             {% include 'mainapp/includes/inc_proguct_cat.html' %}
         </div>
-        {% include 'mainapp/includes/inc_hot_product.html' %}
-        {% include 'mainapp/includes/inc_related_products.html' %}
+        {% include 'mainapp/includes/inc_product.html' %}
+        {% if not request.resolver_match.url_name == 'details' %}
+            {% include 'mainapp/includes/inc_related_products.html' %}
+        {% endif %}
     </div>
 {% endblock %}

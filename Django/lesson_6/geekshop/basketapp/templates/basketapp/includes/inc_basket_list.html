@@ -1,0 +1,44 @@
+<table class="table table-bordered table-hover text-center">
+
+    {% if basket %}
+        <caption>
+            В корзине {{ basket.0.total_amount }} товаров общей стоимостью
+            {{ basket.0.total_price }} руб
+        </caption>
+
+    {% endif %}
+
+    <thead class="table-dark">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Img</th>
+        <th scope="col">Category</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Qty</th>
+        <th scope="col">Total</th>
+        <th scope="col">Options</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in basket %}
+        <tr>
+            <th class="align-middle" scope="row">{{ forloop.counter }}</th>
+            <td><img src="/media/{{ item.product.image }}"
+                     alt="{{ item.product.short_desc }}" class="img-fluid" style="width: 50%"></td>
+            <td class="align-middle">{{ item.product.category.name }}</td>
+            <td class="align-middle">{{ item.product.name }}</td>
+            <td class="align-middle">{{ item.product.price }}&nbspруб</td>
+            <td class="align-middle"><input type="number" name="{{ item.pk }}" min="0"
+                                            value="{{ item.quantity }}"></td>
+            <td class="align-middle">{{ item.total_price }}&nbspруб</td>
+            <td class="align-middle">
+
+                <a href="{% url 'basket:remove' item.pk %}" class="btn btn-outline-danger">
+                    Удалить
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

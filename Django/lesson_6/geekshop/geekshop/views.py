@@ -6,7 +6,7 @@ import json
 import os
 
 
-JSON_PATH = 'mainapp/json'
+JSON_PATH = 'geekshop/json'
 
 
 def get_json(file_name):
