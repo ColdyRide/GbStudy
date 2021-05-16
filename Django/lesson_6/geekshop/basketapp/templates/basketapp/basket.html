@@ -5,28 +5,23 @@
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 {% endblock %}
 {% block js %}
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
             integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
             crossorigin="anonymous"></script>
+    <script src="{% static 'js/basket_scripts.js' %}"></script>
 {% endblock %}
 {% block menu %}
     <div class="container">
-    <div class="hero-white">
-        {% include 'includes/inc_main_links.html' %}
+        <div class="hero-white">
+            {% include 'includes/inc_main_links.html' %}
+        </div>
     </div>
 {% endblock %}
 {% block content %}
     {% if user.is_authenticated %}
         <div class="container">
-            <div class="row">
-                <div class="basket_list">
-                    {% include 'basketapp/includes/inc_basket_list.html' %}
-                </div>
-            </div>
-        </div>
+            {% include 'basketapp/includes/inc_basket_list.html' %}
         </div>
     {% endif %}
 {% endblock %}

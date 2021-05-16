@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from mainapp.models import Product
-from basketapp.models import Basket
+from mainapp.views import get_basket
 
 import json
 import os
@@ -20,9 +20,7 @@ def get_json(file_name):
 def main(request):
     main_links = get_json('main_links')
     title = 'главная'
-    basket = []
-    if request.user.is_authenticated:
-        basket = Basket.objects.filter(user=request.user)
+    basket = get_basket(request.user)
 
     context = {
         'title': title,
