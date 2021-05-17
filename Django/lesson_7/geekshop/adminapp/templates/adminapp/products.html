@@ -1,10 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'adminapp/base.html' %}
+{% load static %}
+{% block main_content %}
+    <div class="row" style="justify-content:center">
+        <div class="basket_list">
+            <table class="table table-bordered table-hover align-middle text-center">
+                <caption>
 
-</body>
-</html>
+                </caption>
+                <thead class="table-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Изображение</th>
+                    <th scope="col">Категория</th>
+                    <th scope="col">Имя</th>
+                    <th scope="col">Цена</th>
+                    <th scope="col">На складе</th>
+                    <th scope="col">Опции</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for product in products %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td><img src="/media/{{ product.image }}"
+                                 alt="{{ product.short_desc }}" class="img-fluid" style="width: 25%"></td>
+                        <td>{{ product.category.name }}</td>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.price }}&nbspруб</td>
+                        <td><input type="number" min="0"
+                                                        value="{{ product.quantity }}"></td>
+                        <td>
+                            <div class="d-flex justify-content-around">
+                                <form action="{% url 'admin_staff:product_read' product.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <button class="btn btn-outline-primary">Детали</button>
+                                </form>
+                                <form action="{% url 'admin_staff:product_delete' product.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <button class="btn btn-outline-danger">Удалить</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
