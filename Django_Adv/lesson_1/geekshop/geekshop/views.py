@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from mainapp.models import Product
-from mainapp.views import get_basket
 
 import json
 import os
@@ -20,13 +19,11 @@ def get_json(file_name):
 def main(request):
     main_links = get_json('main_links')
     title = 'главная'
-    basket = get_basket(request.user)
 
     context = {
         'title': title,
         'main_links': main_links,
         'products': Product.objects.all()[:3],
-        'basket': basket,
     }
     return render(request, 'index.html', context)
 
