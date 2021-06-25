@@ -11,11 +11,9 @@ from mainapp.models import Product
 @login_required
 def basket(request):
     if request.user.is_authenticated:
-        basket = Basket.objects.filter(user=request.user).order_by('product__category')
         title = 'корзина'
         context = {
             'title': title,
-            'basket': basket,
         }
         return render(request, 'basketapp/basket.html', context)
 
@@ -60,12 +58,6 @@ def basket_edit(request, pk, quantity):
         else:
             new_basket_item.delete()
 
-        basket = Basket.objects.filter(user=request.user).order_by('product__category')
-
-        context = {
-            'basket': basket,
-        }
-
-        result = render_to_string('basketapp/includes/inc_basket_list.html', context)
+        result = render_to_string('basketapp/includes/inc_basket_list.html')
 
         return JsonResponse({'result': result})

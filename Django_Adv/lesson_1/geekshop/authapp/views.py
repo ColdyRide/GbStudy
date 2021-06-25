@@ -48,7 +48,7 @@ def register(request):
         if register_form.is_valid():
             user = register_form.save()
             send_verify_link(user)
-            return HttpResponseRedirect(reverse('auth:login'))
+            return render(request, 'authapp/link_sent.html')
     else:
         register_form = ShopUserRegisterForm()
 
