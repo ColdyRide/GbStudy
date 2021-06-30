@@ -58,6 +58,13 @@ def basket_edit(request, pk, quantity):
         else:
             new_basket_item.delete()
 
-        result = render_to_string('basketapp/includes/inc_basket_list.html')
+        # Was added for properly work of ajax basket edition ( looks like context_processor for basket ignore this
+        basket = Basket.objects.filter(user=request.user).order_by('product__category')
+
+        context = {
+            'basket': basket,
+        }
+        # --------
+        result = render_to_string('basketapp/includes/inc_basket_list.html', context)
 
         return JsonResponse({'result': result})

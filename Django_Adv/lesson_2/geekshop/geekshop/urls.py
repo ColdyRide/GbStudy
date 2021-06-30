@@ -21,6 +21,7 @@ from django.conf.urls import include
 import geekshop.views as geekshop
 
 urlpatterns = [
+    path('', include('social_django.urls', namespace='social')),
     path('', geekshop.main, name='index'),
     path('products/', include('mainapp.urls', namespace='products')),
     path('contact/', geekshop.contact, name='contact'),

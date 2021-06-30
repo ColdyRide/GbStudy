@@ -44,7 +44,7 @@ class ProductEditForm(forms.ModelForm):
                 field.widget.attrs['class'] = 'form-check-input'
                 continue
             if field_name == 'category':
-                field.widget.attrs['class'] = 'custom-select'
+                field.widget.attrs['class'] = 'form-select'
                 continue
             field.widget.attrs['class'] = 'form-control'
             field.help_text = ''
