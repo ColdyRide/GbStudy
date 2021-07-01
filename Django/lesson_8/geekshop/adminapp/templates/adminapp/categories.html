@@ -28,13 +28,17 @@
                 </td>
                 <td>
                     <div class="d-flex justify-content-around">
-                        <form action="{% url 'admin_staff:products' category.id %}" method="POST">
+                        <form action="{% url 'admin_staff:products' category.id %}" method="GET">
                             {% csrf_token %}
                             <button class="btn btn-outline-primary">Продукты</button>
                         </form>
                         <form action="{% url 'admin_staff:category_delete' category.id %}" method="POST">
                             {% csrf_token %}
-                            <button class="btn btn-outline-danger">Удалить</button>
+                            {% if category.is_active %}
+                                <button class="btn btn-outline-danger">Удалить</button>
+                            {% else %}
+                                <button class="btn btn-outline-danger disabled">Удалить</button>
+                            {% endif %}
                         </form>
                     </div>
                 </td>

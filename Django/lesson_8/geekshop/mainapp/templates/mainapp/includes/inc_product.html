@@ -2,12 +2,12 @@
 <div class="details-products">
     <div class="details-slider">
         <div class="slider-product">
-            <img src="/media/{{ product.image }}" alt="img" style="width:100%">
+            <img src="/media/{{ product.image|default:'img/default.jpg' }}" alt="img" style="width:100%">
         </div>
         <div class="slider-control">
             {% for i in '123' %}
                 <div class="block">
-                    <a href="#"><img src="/media/{{ product.image }}" alt="{{ product.name }}" style="width:100%">
+                    <a href="#"><img src="/media/{{ product.image|default:'img/default.jpg' }}" alt="{{ product.name }}" style="width:100%">
                         <div class="text"></div>
                     </a>
                 </div>

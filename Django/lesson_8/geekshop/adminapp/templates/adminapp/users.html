@@ -45,7 +45,11 @@
                 <td class="align-middle">
                     <form action="{% url 'admin_staff:user_delete' user.id %}" method="POST">
                         {% csrf_token %}
+                        {% if user.is_active %}
                         <button class="btn btn-outline-danger"> Удалить</button>
+                        {% else %}
+                        <button class="btn btn-outline-danger disabled"> Удалить</button>
+                        {% endif %}
                     </form>
                 </td>
             </tr>
