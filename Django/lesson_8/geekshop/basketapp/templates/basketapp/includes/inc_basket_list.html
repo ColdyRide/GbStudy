@@ -22,7 +22,7 @@
                 {% for item in basket %}
                     <tr>
                         <th class="align-middle" scope="row">{{ forloop.counter }}</th>
-                        <td><img src="/media/{{ item.product.image }}"
+                        <td><img src="/media/{{ item.product.image|default:'img/default.jpg' }}"
                                  alt="{{ item.product.short_desc }}" class="img-fluid" style="width: 50%"></td>
                         <td class="align-middle">{{ item.product.category.name }}</td>
                         <td class="align-middle">{{ item.product.name }}</td>
