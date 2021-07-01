@@ -1,6 +1,8 @@
 import random
 
 from django.shortcuts import render, get_object_or_404
+from django.views.generic import ListView
+
 from .models import ProductCategories, Product
 from basketapp.models import Basket
 
@@ -24,45 +26,44 @@ def get_hot_product():
 
 def get_same_products(hot_product):
     same_products = Product.objects.filter(category=hot_product.category).exclude(pk=hot_product.pk)[:3]
-
     return same_products
 
 
-# Create your views here.
-def products(request, pk=None):
+class ProductsView(ListView):
+    template_name = 'mainapp/products_list.html'
+    extra_context = {'title': 'каталог',
+                     'main_links': get_json('main_links'),
+                     'categories': ProductCategories.objects.all()}
+    paginate_by = 3
+    context_object_name = 'products'
 
-    main_links = get_json('main_links')
-    title = 'каталог'
-    hot_product = get_hot_product()
-    same_products = get_same_products(hot_product)
-    categories = ProductCategories.objects.all()
+    def get_queryset(self):
+        if 'pk' in self.kwargs.keys():
+            if self.kwargs['pk'] == 1:
+                return Product.objects.all().order_by('price')
+            else:
+                return Product.objects.filter(category_id__pk=self.kwargs['pk']).order_by('price')
+        same_products = get_same_products(self.hot_product)
+        return same_products
 
-    if pk is not None:
-        if pk == 1:
-            products = Product.objects.all().order_by('price')
-            category = {'name': 'все'}
-        else:
-            category = get_object_or_404(ProductCategories, pk=pk)
-            products = Product.objects.filter(category_id__pk=pk).order_by('price')
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if 'pk' in self.kwargs.keys():
+            if self.kwargs['pk'] == 1:
+                context['category'] = {'name': 'все'}
+            else:
+                context['category'] = get_object_or_404(ProductCategories, pk=self.kwargs['pk'])
+            return context
+        context['product'] = self.hot_product
+        return context
 
-        context = {
-            'title': title,
-            'main_links': main_links,
-            'categories': categories,
-            'category': category,
-            'products': products,
-        }
-
-        return render(request, 'mainapp/products_list.html', context)
-
-    context = {
-        'title': title,
-        'main_links': main_links,
-        'categories': categories,
-        'products': same_products,
-        'product': hot_product,
-    }
-    return render(request, 'mainapp/products.html', context)
+    def get(self, request, *args, **kwargs):
+        self.hot_product = get_hot_product()
+        self.object_list = self.get_queryset()
+        context = self.get_context_data(**kwargs)
+        if 'product' in context.keys():
+            self.template_name = 'mainapp/products.html'
+        return self.render_to_response(context)
 
 
 def detail(request, pk=None):
