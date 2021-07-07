@@ -9,7 +9,18 @@
             {% endif %}
         {% endfor %}
         {% if user.is_authenticated %}
-            <li><a href="{% url 'auth:edit' %}">{{ user.first_name|default:'Пользователь' }}</a></li>
+            <li>
+                <div class="dropdown ">
+                    <a href="#" class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ user.first_name|default:'Пользователь' }} <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="{% url 'auth:edit' %}">профиль</a></li>
+                        <li><a class="dropdown-item" href="{% url 'order:order_list' %}">заказы</a></li>
+                    </ul>
+                </div>
+            </li>
         {% endif %}
         {% if user.is_superuser %}
             <li>
@@ -24,11 +35,13 @@
             {% endif %}
         </li>
     </ul>
-    <a href="#" class="search"></a>
-    {% if basket %}
-        <a href="{% url 'basket:view' %}" class="basket">
-        <span>{{ basket.0.total_price|floatformat:0 }} руб
-        ({{ basket.0.total_amount }} шт.)</span>
-        </a>
-    {% endif %}
+    <div class="basket-container">
+        <a href="#" class="search"></a>
+        {% if basket %}
+            <a href="{% url 'basket:view' %}" class="basket">
+                <span>{{ basket.0.total_price|floatformat:0 }} руб ({{ basket.0.total_amount }} шт.)</span>
+            </a>
+        {% endif %}
+    </div>
+
 </div>

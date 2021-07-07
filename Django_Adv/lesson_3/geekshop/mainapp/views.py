@@ -4,23 +4,10 @@ from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView
 
 from .models import ProductCategories, Product
-from basketapp.models import Basket
-
-import json
-import os
-
-
-JSON_PATH = 'geekshop/json'
-
-
-def get_json(file_name):
-    with open(os.path.join(JSON_PATH, f'{file_name}.json'), 'r', encoding='UTF-8') as file:
-        result = json.load(file)
-    return result
 
 
 def get_hot_product():
-    products = Product.objects.all()
+    products = Product.objects.all().exclude(category__is_active=False)
     return random.sample(list(products), 1)[0]
 
 
@@ -31,18 +18,17 @@ def get_same_products(hot_product):
 
 class ProductsView(ListView):
     template_name = 'mainapp/products_list.html'
-    extra_context = {'title': 'каталог',
-                     'main_links': get_json('main_links'),
-                     'categories': ProductCategories.objects.all()}
+    extra_context = {'title': 'каталог'}
     paginate_by = 3
     context_object_name = 'products'
 
     def get_queryset(self):
         if 'pk' in self.kwargs.keys():
             if self.kwargs['pk'] == 1:
-                return Product.objects.all().order_by('price')
+                return Product.objects.all().exclude(category__is_active=False).order_by('price')
             else:
-                return Product.objects.filter(category_id__pk=self.kwargs['pk']).order_by('price')
+                return Product.objects.filter(category_id__pk=self.kwargs['pk']).exclude(
+                    category__is_active=False).order_by('price')
         same_products = get_same_products(self.hot_product)
         return same_products
 
@@ -68,11 +54,8 @@ class ProductsView(ListView):
 
 def detail(request, pk=None):
     title = 'продукт'
-    main_links = get_json('main_links')
     content = {
         'title': title,
-        'main_links': main_links,
-        'categories': ProductCategories.objects.all(),
         'product': get_object_or_404(Product, pk=pk),
     }
 

@@ -13,36 +13,51 @@ html, body {
     height: 100%;
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
 .clr {
     height: 384px;
 }
 
 .container {
-    width: 1366px;
-    margin: 0 auto;
-    min-height: 100%;
+    width: 1366px !important;
+    margin: 0 auto !important;
+    min-height: 100% !important;
+    padding: 0 !important;
+
 }
 
 .slider {
     height: 800px;
     background-image: url(img/slider.jpg);
     padding-left: 98px;
-    padding-right: 211px;
     position: relative;
 }
 
+.basket-container{
+    display: inline-flex;
+    flex-flow: row;
+    width: 250px;
+    justify-content: space-between;
+    align-content: center;
+    margin-top: 65px;
+    justify-self: end;
+}
 .logo {
     background-image: url(img/logo.png);
     margin-top: 63px;
     width: 185px;
     height: 22px;
-    float: left;
+    justify-self: end;
 }
 
 .menu {
+    display: block;
     list-style-type: none;
     margin-top: 67px;
-    float: right;
 }
 
 .menu li {
@@ -69,6 +84,8 @@ html, body {
     color: #212121;
     font-weight: 700;
     border-bottom: 3px solid #212121;
+    text-decoration: none !important;
+    background-color: inherit;
 }
 
 .menu a:active {
@@ -82,9 +99,7 @@ html, body {
     width: 23px;
     height: 23px;
     background-image: url(img/search.png);
-    position: absolute;
-    top: 63px;
-    left: 1176px;
+
 }
 
 .basket {
@@ -92,9 +107,6 @@ html, body {
     flex-flow: row;
     height: 23px;
     width: 200px;
-    position: absolute;
-    top: 63px;
-    left: 1210px;
     color: #212121;
     font-size: 12px;
     font-weight: 700;
@@ -618,6 +630,7 @@ html, body {
     padding-right: 98px;
     margin: -384px auto 0;
     clear: both;
+    box-sizing: content-box;
 }
 
 .footer form {
@@ -785,7 +798,6 @@ td:first-child {
     background-color: #f5f5f5;
     height: 360px;
     padding-left: 98px;
-    padding-right: 211px;
     position: relative;
 }
 
@@ -953,7 +965,6 @@ td:first-child {
     background-color: #fff;
     height: 119px;
     padding-left: 98px;
-    padding-right: 211px;
     position: relative;
 }
 
@@ -1006,6 +1017,8 @@ td:first-child {
     padding-right: 98px;
     margin-top: 98px;
     height: 651px;
+    display: flex;
+    justify-content: center;
 }
 
 .details-slider {

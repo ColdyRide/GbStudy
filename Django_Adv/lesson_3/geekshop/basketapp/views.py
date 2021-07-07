@@ -6,6 +6,7 @@ from django.urls import reverse
 
 from basketapp.models import Basket
 from mainapp.models import Product
+from mainapp.context_processors import basket as cont_basket
 
 
 @login_required
@@ -15,6 +16,7 @@ def basket(request):
         context = {
             'title': title,
         }
+
         return render(request, 'basketapp/basket.html', context)
 
     return HttpResponseRedirect(request.META.get("HTTP_REFERER"))
@@ -58,12 +60,8 @@ def basket_edit(request, pk, quantity):
         else:
             new_basket_item.delete()
 
-        # Was added for properly work of ajax basket edition ( looks like context_processor for basket ignore this
-        basket = Basket.objects.filter(user=request.user).order_by('product__category')
-
-        context = {
-            'basket': basket,
-        }
+        # Was added for properly work of ajax basket edition (looks like context_processor for basket ignore this)
+        context = cont_basket(request)
         # --------
         result = render_to_string('basketapp/includes/inc_basket_list.html', context)
 
